@@ -26,7 +26,7 @@ describe("Day 2", () => {
 
         it("should solve the actual input", () => {
             const result = solvePart2(input)
-            console.log("Day 2 - Part 1: ", result)
+            console.log("Day 2 - Part 2: ", result)
 
             expect(result).toBeDefined()
         })
