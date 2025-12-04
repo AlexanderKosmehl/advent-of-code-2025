@@ -49,7 +49,7 @@ function getMaximumJoltageForBank2(bankString: string, chainLength: number): num
 }
 
 export function solvePart1(input: string[]): number {
-    return input.reduce((joltageSum, batteryBankString) => joltageSum + getMaximumJoltageForBank2(batteryBankString, 2), 0)
+    return input.reduce((joltageSum, batteryBankString) => joltageSum + getMaximumJoltageForBank(batteryBankString), 0)
 }
 
 export function solvePart2(input: string[], chainLength: number): number {
