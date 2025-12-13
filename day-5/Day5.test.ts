@@ -1,4 +1,3 @@
-
 import { readFileSync } from "fs"
 import { describe, expect, it } from "vitest"
 import { solvePart1, solvePart2 } from "./Day5"

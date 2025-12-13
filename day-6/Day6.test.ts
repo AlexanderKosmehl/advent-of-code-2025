@@ -1,19 +1,20 @@
+
 import { readFileSync } from "fs"
 import { describe, expect, it } from "vitest"
-import { solvePart1, solvePart2 } from "./Day4"
+import { solvePart1, solvePart2 } from "./Day6"
 
 describe("Day 3", () => {
-    const sample = readFileSync(new URL("./sample.txt", import.meta.url), "utf8").split(/\r?\n/).map(line => line.split(''))
-    const input = readFileSync(new URL("./input.txt", import.meta.url), "utf8").split(/\r?\n/).map(line => line.split(''))
+    const sample = readFileSync(new URL("./sample.txt", import.meta.url), "utf8").split(/\r?\n/)
+    const input = readFileSync(new URL("./input.txt", import.meta.url), "utf8").split(/\r?\n/)
 
     describe("Part 1", () => {
         it("should solve the sample input", () => {
-            expect(solvePart1(sample)).toBe(13)
+            expect(solvePart1(sample)).toBe(4277556)
         })
 
         it("should solve the actual input", () => {
             const result = solvePart1(input)
-            console.log("Day 4 - Part 1: ", result)
+            console.log("Day 5 - Part 1: ", result)
 
             expect(result).toBeDefined()
         })
@@ -21,13 +22,13 @@ describe("Day 3", () => {
 
     describe("Part 2", () => {
         it("should solve the sample input", () => {
-            expect(solvePart2(sample)).toBe(43)
+            expect(solvePart2(sample)).toBe(3263827)
         })
 
 
         it("should solve the actual input", () => {
             const result = solvePart2(input)
-            console.log("Day 4 - Part 2: ", result)
+            console.log("Day 5 - Part 2: ", result)
 
             expect(result).toBeDefined()
         })
