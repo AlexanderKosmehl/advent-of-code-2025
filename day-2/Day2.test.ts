@@ -2,7 +2,10 @@ import { readFileSync } from "fs"
 import { describe, expect, it } from "vitest"
 import { solvePart1, solvePart2 } from "./Day2"
 
-describe("Day 2", () => {
+// get filename and extract day number
+const currentDay = __filename.match(/Day(\d+)/)?.[1]
+
+describe(`Day ${currentDay}`, () => {
     const sample = readFileSync(new URL("./sample.txt", import.meta.url), "utf8").split(",")
     const input = readFileSync(new URL("./input.txt", import.meta.url), "utf8").split(",")
 
@@ -13,12 +16,12 @@ describe("Day 2", () => {
 
         it("should solve the actual input", () => {
             const result = solvePart1(input)
-            console.log("Day 2 - Part 1: ", result)
+            console.log(`Day ${currentDay} - Part 1: `, result)
 
             expect(result).toBeDefined()
         })
     })
-    
+
     describe("Part 2", () => {
         it("should solve the sample input", () => {
             expect(solvePart2(sample)).toBe(4174379265)
@@ -26,7 +29,7 @@ describe("Day 2", () => {
 
         it("should solve the actual input", () => {
             const result = solvePart2(input)
-            console.log("Day 2 - Part 2: ", result)
+            console.log(`Day ${currentDay} - Part 2: `, result)
 
             expect(result).toBeDefined()
         })

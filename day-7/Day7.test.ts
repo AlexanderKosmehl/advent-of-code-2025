@@ -1,17 +1,27 @@
-import { describe, expect, it } from "vitest"
-import { readFileSync } from "node:fs"
-import { solvePart1, solvePart2 } from "./Day1"
+import { readFileSync } from "fs"
+import { beforeEach, describe, expect, it } from "vitest"
+import { solvePart1, solvePart2 } from "./Day7"
 
 // get filename and extract day number
 const currentDay = __filename.match(/Day(\d+)/)?.[1]
 
 describe(`Day ${currentDay}`, () => {
-    const sample = readFileSync(new URL("./sample.txt", import.meta.url), "utf8").split(/\r?\n/)
-    const input = readFileSync(new URL("./input.txt", import.meta.url), "utf8").split(/\r?\n/)
+
+    const getSample = () => readFileSync(new URL("./sample.txt", import.meta.url), "utf8").split(/\r?\n/).map(line => line.split(''))
+    const getInput = () => readFileSync(new URL("./input.txt", import.meta.url), "utf8").split(/\r?\n/).map(line => line.split(''))
+
+    let sample: string[][]
+    let input: string[][]
+
+    // Solver modifies input in place so it has to be restored before each test
+    beforeEach(() => {
+        sample = getSample()
+        input = getInput()
+    })
 
     describe("Part 1", () => {
         it("should solve the sample input", () => {
-            expect(solvePart1(sample)).toBe(3)
+            expect(solvePart1(sample)).toBe(21)
         })
 
         it("should solve the actual input", () => {
@@ -24,8 +34,9 @@ describe(`Day ${currentDay}`, () => {
 
     describe("Part 2", () => {
         it("should solve the sample input", () => {
-            expect(solvePart2(sample)).toBe(6)
+            expect(solvePart2(sample)).toBe(40)
         })
+
 
         it("should solve the actual input", () => {
             const result = solvePart2(input)
