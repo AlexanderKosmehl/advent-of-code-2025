@@ -32,3 +32,8 @@ export function solvePart1(input: string[]): number {
 
     return maxSize
 }
+
+export function solvePart2(input: string[]): number {
+    console.log(input)
+    return 0
+}
