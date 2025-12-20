@@ -1,6 +1,3 @@
-import { get } from "http"
-import { connect } from "http2"
-
 interface GraphNode {
     name: string
     connectedTo: GraphNode[]
