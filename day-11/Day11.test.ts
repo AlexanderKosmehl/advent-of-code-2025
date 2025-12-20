@@ -8,6 +8,7 @@ const currentDay = __filename.match(/Day(\d+)/)?.[1]
 describe(`Day ${currentDay}`, () => {
 
     const sample = readFileSync(new URL("./sample.txt", import.meta.url), "utf8").split(/\r?\n/)
+    const sample2 = readFileSync(new URL("./sample2.txt", import.meta.url), "utf8").split(/\r?\n/)
     const input = readFileSync(new URL("./input.txt", import.meta.url), "utf8").split(/\r?\n/)
 
     describe("Part 1", () => {
@@ -25,7 +26,7 @@ describe(`Day ${currentDay}`, () => {
 
     describe("Part 2", () => {
         it("should solve the sample input", () => {
-            expect(solvePart2(sample)).toBe(24)
+            expect(solvePart2(sample2)).toBe(2)
         })
 
 
